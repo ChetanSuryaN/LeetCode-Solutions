@@ -13,8 +13,8 @@ class Solution {
          {
             if(nums[j]!=nums[i])
             {
-                i++;
-                nums[i]=nums[j];
+                
+                nums[++i]=nums[j];
                 
             }
          }
