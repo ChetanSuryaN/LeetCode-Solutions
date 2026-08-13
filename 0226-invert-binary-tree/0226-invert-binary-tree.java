@@ -16,12 +16,12 @@
 class Solution {
     public TreeNode invertTree(TreeNode root) 
     {
-        reverse(root,root);
+        reverse(root);
         return root;       
 
               
     }
-    public void reverse(TreeNode root,TreeNode Head)
+    public void reverse(TreeNode root)
     
     {
         if(root==null)
@@ -34,8 +34,8 @@ class Solution {
         root.left=root.right;
         root.right=temp;
          
-          reverse(root.left,Head);
-          reverse(root.right,Head);
+          reverse(root.left);
+          reverse(root.right);
         }
 
 
