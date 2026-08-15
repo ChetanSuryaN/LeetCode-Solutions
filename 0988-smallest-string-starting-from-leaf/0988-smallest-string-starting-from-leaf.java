@@ -32,11 +32,11 @@ class Solution
         {
             StringBuilder sb=new StringBuilder(s);
             String str=sb.reverse().toString();
-            if(min=="")
+            if(min.isEmpty())
             {
                 min=str;
             }
-        if(str!=""&&str.compareTo(min)<0)
+        if(!str.isEmpty()&&str.compareTo(min)<0)
         {
             min=str;
         }
