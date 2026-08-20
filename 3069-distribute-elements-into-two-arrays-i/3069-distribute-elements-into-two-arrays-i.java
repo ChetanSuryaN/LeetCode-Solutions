@@ -2,28 +2,32 @@ class Solution {
     public int[] resultArray(int[] nums)
      {
         int arr[]=new int[nums.length];
-        int m[]=new int[nums.length];
-        int top=-1;
-        int bigtop=-1;
-        arr[0]=nums[0];
-        m[0]=nums[1];
-        top=0;
-        bigtop=0;
+        
+        int left=-1;
+        int right=nums.length;
+        arr[++left]=nums[0];
+        arr[--right]=nums[1];
+       
         for(int i=2;i<nums.length;i++)
         {
-            if(arr[top]>m[bigtop])
+            if(arr[left]>arr[right])
             {
-                arr[++top]=nums[i];
+                arr[++left]=nums[i];
             }
             else
             {
-                m[++bigtop]=nums[i];
+                arr[--right]=nums[i];
             }
         }
-        for(int i=0;i<=bigtop;i++)
-        {
-            arr[++top]=m[i];
-        }
+       int last=nums.length-1;
+       while(right<last)
+       {
+        int temp=arr[right];
+        arr[right]=arr[last];
+        arr[last]=temp;
+        right++;
+        last--;
+       }
         return arr;
         
     }
