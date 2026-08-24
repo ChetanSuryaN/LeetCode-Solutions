@@ -12,8 +12,7 @@ class Solution {
             else
             ca[s.charAt(i)-'A']++;
         }
-        Arrays.sort(c);
-        Arrays.sort(ca);
+        
         for(int i=25;i>=0;i--)
         {
             if(c[i]%2==0)
