@@ -34,13 +34,13 @@ class Solution {
         map.put(2000,"MM");
         map.put(3000,"MMM");
         String input=String.valueOf(num);
-        String ans="";
+        StringBuilder ans=new StringBuilder();
         for(int i=0;i<input.length();i++)
         {
             int temp=input.charAt(i)-'0';
             temp=temp*(int)Math.pow(10.0,(input.length()-i-1));
-            ans+=map.get(temp);
+            ans.append(map.get(temp));
         }
-        return ans;
+        return ans.toString();
     }
 }
