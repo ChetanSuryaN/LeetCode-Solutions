@@ -20,7 +20,7 @@ class Solution {
             }
         }
         int front=Math.max(minpos,maxpos)+1;
-        int behind=Math.max(nums.length-minpos,nums.length-maxpos);
+        int behind=Math.max(nums.length-1-minpos,nums.length-1-maxpos)+1;
         int both=Math.min(minpos,nums.length-1-minpos)+Math.min(maxpos,nums.length-1-maxpos)+2;
         return Math.min(front,Math.min(both,behind));
         
