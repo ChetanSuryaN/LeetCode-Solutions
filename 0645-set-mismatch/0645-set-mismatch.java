@@ -1,27 +1,30 @@
 class Solution {
     public int[] findErrorNums(int[] nums) 
-    {
-        Arrays.sort(nums);
-        int x=0;
-        int arr[]=new int[2];
-        HashSet<Integer> set=new HashSet<>();
-        for(int i=0;i<nums.length-1;i++)
+    {       
+        for(int i=0;i<nums.length;i++)
         {
-            set.add(nums[i]);
-            if(nums[i]==nums[i+1])
+            nums[Math.abs(nums[i])-1]*=-1;
+        }   
+        int ans[]=new int[2];
+        int j=-1;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>0)
             {
-                arr[0]=nums[i];
+                ans[++j]=i+1;
             }
         }
-        set.add(nums[nums.length-1]);
-        for(int i=1;i<=nums.length;i++)
-        {
-            if(!set.contains(i))
-            {
-                arr[1]=i;
-            }
-        }
-        return arr;
         
+        for(int i=0;i<nums.length;i++)
+        {
+            if(Math.abs(nums[i])==ans[0])
+            {
+                return ans;
+            }
+        }
+        int emp=ans[0];
+        ans[0]=ans[1];
+        ans[1]=emp;
+        return ans;
     }
 }
