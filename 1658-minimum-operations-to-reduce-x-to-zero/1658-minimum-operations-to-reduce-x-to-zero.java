@@ -1,7 +1,7 @@
 class Solution {
     public int minOperations(int[] nums, int x) 
     {
-        int len=Integer.MIN_VALUE;
+        int len=-1;
         int sum=0;
         for(int num:nums)
         {
@@ -29,6 +29,6 @@ class Solution {
             len=Math.max(len,right-left+1);
             
         }
-        return len==Integer.MIN_VALUE?-1:nums.length-len;
+        return len==-1?-1:nums.length-len;
     }
 }
