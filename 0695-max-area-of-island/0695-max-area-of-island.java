@@ -10,14 +10,14 @@ class Solution
                 if(grid[i][j]==1)
                 {
                    
-                   maxarea=Math.max( dfs(grid,i,j,1),maxarea);
+                   maxarea=Math.max( dfs(grid,i,j),maxarea);
                 }
             }
         }
         return maxarea;
         
     }
-    private int dfs(int grid[][],int i,int j,int area)
+    private int dfs(int grid[][],int i,int j)
     {
         if(i<0||i>=grid.length||j<0||j>=grid[0].length)
         {
@@ -31,8 +31,8 @@ class Solution
         }
         grid[i][j]=0;
 
-        return 1+dfs(grid,i-1,j,area+1)+dfs(grid,i+1,j,area+1)+
-          dfs(grid,i,j-1,area+1)+
-           dfs(grid,i,j+1,area+1);        
+        return 1+dfs(grid,i-1,j)+dfs(grid,i+1,j)+
+          dfs(grid,i,j-1)+
+           dfs(grid,i,j+1);        
     }
 }
