@@ -36,11 +36,11 @@ class Solution {
                 return true;
             }
             visited[i][j]=true;
-            boolean up=found(board,i-1,j,word,pos+1,visited);
-            boolean down=found(board,i+1,j,word,pos+1,visited);
-            boolean right=found(board,i,j-1,word,pos+1,visited);
-            boolean left=found(board,i,j+1,word,pos+1,visited);
-            boolean status=up||down||left||right;
+            //boolean up=;
+           // boolean down=;
+            //boolean right=;
+            //boolean left=;
+            boolean status=found(board,i-1,j,word,pos+1,visited)||found(board,i+1,j,word,pos+1,visited)||found(board,i,j-1,word,pos+1,visited)||found(board,i,j+1,word,pos+1,visited);
             if(!status)
             {
                 visited[i][j]=false;
