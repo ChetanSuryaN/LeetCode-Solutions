@@ -40,7 +40,8 @@ class Solution {
             boolean down=found(board,i+1,j,word,pos+1,visited);
             boolean right=found(board,i,j-1,word,pos+1,visited);
             boolean left=found(board,i,j+1,word,pos+1,visited);
-            if(!(up||down||left||right))
+            boolean status=up||down||left||right;
+            if(!status)
             {
                 visited[i][j]=false;
                 return false;
