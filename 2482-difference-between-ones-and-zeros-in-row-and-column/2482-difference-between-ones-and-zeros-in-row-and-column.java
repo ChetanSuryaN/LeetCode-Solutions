@@ -21,14 +21,14 @@ class Solution {
                 }
             }
         }
-        int ans[][]=new int[grid.length][grid[0].length];
+        
         for(int i=0;i<grid.length;i++)
         {
             for(int j=0;j<grid[0].length;j++)
             {
-                ans[i][j]=onerow[i]+onecol[j]-zerorow[i]-zerocol[j];
+                grid[i][j]=onerow[i]+onecol[j]-zerorow[i]-zerocol[j];
             }
         }
-        return ans;
+        return grid;
     }
 }
