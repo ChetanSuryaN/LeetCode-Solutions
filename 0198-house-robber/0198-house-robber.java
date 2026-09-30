@@ -3,9 +3,15 @@ class Solution
     int memo[];
     public int rob(int[] nums) 
     {
-        memo=new int[nums.length];
-        Arrays.fill(memo,-1);
-        return helper(0,nums);        
+       int prev1=0;
+       int prev2=0;
+       for(int num:nums)
+       {
+        int curr=Math.max(prev1,prev2+num);
+        prev2=prev1;
+        prev1=curr;
+       }       
+       return prev1;
     }
     public int helper(int i,int nums[])
     {
