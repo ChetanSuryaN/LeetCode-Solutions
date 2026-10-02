@@ -3,40 +3,40 @@ class Solution {
      {
         int curr=0;
         int ans[][]=new int[n][n];
-        boolean v[][]=new boolean[n][n];
+        for(int c[]:ans)
+        Arrays.fill(c,-1);
         int top=0,left=0,bottom=n-1,right=n-1;
         while(top<=bottom&&left<=right)
         {
             for(int i=left;i<=right;i++)
             {
-                if(!v[top][i])
+                if(ans[top][i]==-1)
                 {
                 ans[top][i]=++curr;
-                v[top][i]=true;
                 }
             }
             for(int i=top;i<=bottom;i++)
             {
-                if(!v[i][right])
+                if(ans[i][right]==-1)
                 {
                     ans[i][right]=++curr;
-                    v[i][right]=true;
+                    
                 }
             }
             for(int i=right;i>=left;i--)
             {
-                if(!v[bottom][i])
+                if(ans[bottom][i]==-1)
                 {
                     ans[bottom][i]=++curr;
-                    v[bottom][i]=true;
+                    
                 }
             }
             for(int i=bottom;i>=top;i--)
             {
-                if(!v[i][left])
+                if(ans[i][left]==-1)
                 {
                     ans[i][left]=++curr;
-                    v[i][left]=true;
+                    
                 }
             }
             top++;
