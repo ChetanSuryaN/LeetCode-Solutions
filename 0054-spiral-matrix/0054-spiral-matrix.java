@@ -3,45 +3,46 @@ class Solution
     List<Integer> list=new ArrayList<>();
     public List<Integer> spiralOrder(int[][] matrix)
     {    
-        boolean visited[][]=new boolean[matrix.length][matrix[0].length];
+       
         int startrow=0,endrow=matrix.length-1,startcol=0,endcol=matrix[0].length-1;
         while(startrow<=endrow&&startcol<=endcol)
         {
             for(int i=startcol;i<=endcol;i++)
             {
-                if(!visited[startrow][i])
+                if(matrix[startrow][i]!=101)
                 {
                 list.add(matrix[startrow][i]);
-                visited[startrow][i]=true;
+                matrix[startrow][i]=101;
+                
                 }
             }
             
             for(int i=startrow+1;i<=endrow;i++)
             {
-                if(!visited[i][endcol])
+                if(matrix[i][endcol]!=101)
                 {
                 list.add(matrix[i][endcol]);
-                visited[i][endcol]=true;
+                matrix[i][endcol]=101;
                 }
 
             }
            
             for(int i=endcol-1;i>=startcol;i--)
             {
-                if(!visited[endrow][i])
+                if(matrix[endrow][i]!=101)
                 {
                 list.add(matrix[endrow][i]);
-                visited[endrow][i]=true;
+                matrix[endrow][i]=101;
                 }
             }
 
              
             for(int i=endrow-1;i>=startrow+1;i--)
             {
-                if(!visited[i][startcol])
+                if(matrix[i][startcol]!=101)
                 {
                 list.add(matrix[i][startcol]);
-                visited[i][startcol]=true;
+                matrix[i][startcol]=101;
                 }
             }
             startrow++;
