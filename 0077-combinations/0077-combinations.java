@@ -18,7 +18,7 @@ class Solution
             if(!list.contains(i))
             {
                 list.add(i);
-                helper(list,n,i,k);
+                helper(list,n,i+1,k);
                 list.remove(list.size()-1);
             }
         }
