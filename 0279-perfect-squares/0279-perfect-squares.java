@@ -4,7 +4,7 @@ class Solution
     public int numSquares(int n) 
     {
         if(n==1) return 1;
-        memo=new int[10001];
+        memo=new int[n+1];
         int x=(int)Math.sqrt(n);
         int nums[]=new int[x];
         for(int i=0;i<nums.length;i++)
