@@ -3,45 +3,54 @@ class Solution {
     {
         Stack<Integer> st1=new Stack<>();
         Stack<Integer> st2=new Stack<>();
-        int star=0;
         for(int i=0;i<s.length();i++)
         {
             if(s.charAt(i)=='(')
             {
                 st1.push(i);
             }
-            else if(s.charAt(i)=='*')
+            if(s.charAt(i)=='*')
             {
                 st2.push(i);
             }
-            else
+            if(s.charAt(i)==')')
             {
-                if(!st1.isEmpty())
+                if(st1.isEmpty())
                 {
-                    st1.pop();
+                    if(st2.isEmpty())
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        st2.pop();
+                    }
                 }
-                else if(!st2.isEmpty())
-                {
-                    st2.pop();
-                }
-                else return false;
+                else
+            {
+                st1.pop();
             }
+            }
+            
         }
         while(!st1.isEmpty())
         {
-            if(st2.isEmpty())
+            if(!st2.isEmpty())
             {
-                return false;
+                if(st1.peek()<st2.peek())
+                {
+                    st1.pop();
+                    st2.pop();
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-            if(st1.peek()>st2.peek())
-            {
                 return false;
             }
-            }
-            st1.pop();
-            st2.pop();
         }
         return true;
 
