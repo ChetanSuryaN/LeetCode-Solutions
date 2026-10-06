@@ -11,10 +11,9 @@ class Solution
     {
         if(target==0)
         {
-            if(!ans.contains(new ArrayList<>(list)))
-            {
+           
                 ans.add(new ArrayList<>(list));
-            }
+            
             return ;
         } 
         for(int i=idx;i<arr.length;i++)  
