@@ -9,23 +9,24 @@ class Solution
     }
     private void helper(List<Integer> list,int arr[],int idx,int target )
     {
-        if(target<0||idx==arr.length)
-        {
-            return ;
-        }
+        
         if(target==0)
         {
-            if(!ans.contains(new ArrayList<>(list)))
             ans.add(new ArrayList<>(list));
             return ;
         }
     
-        list.add(arr[idx]);
-
-        helper(list,arr,idx,target-arr[idx]);
-        helper(list,arr,idx+1,target-arr[idx]);
+        
+       for(int i=idx;i<arr.length;i++)
+       {
+        if(arr[i]<=target)
+        {
+        list.add(arr[i]);
+        helper(list,arr,i,target-arr[i]);
         list.remove(list.size()-1);
-        helper(list,arr,idx+1,target);
+        }
+       }
+       
     }
     
 }
