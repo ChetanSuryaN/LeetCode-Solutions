@@ -9,7 +9,6 @@ class Solution {
         long ans=0;
         for(int i=0;i<nums.length/2;i++)
         {
-            long temp=
             ans-=(nums[i]*nums[i]);
         }  
         for(int i=nums.length/2;i<nums.length;i++)
