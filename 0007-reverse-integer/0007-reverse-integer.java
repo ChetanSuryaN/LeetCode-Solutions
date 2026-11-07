@@ -1,4 +1,4 @@
-import java.math.*;
+
 class Solution {
     public int reverse(int x)
      {
